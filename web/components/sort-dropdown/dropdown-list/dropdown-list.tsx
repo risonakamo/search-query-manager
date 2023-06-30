@@ -6,7 +6,7 @@ export interface DropdownListProps
 {
   items:DropdownOption[]
 
-  onSelectItem(value:string):void
+  onSelectItem?(value:string):void
 }
 
 export function DropdownList(props:DropdownListProps):JSX.Element
@@ -16,7 +16,7 @@ export function DropdownList(props:DropdownListProps):JSX.Element
       /** clicked an item */
       function h_click():void
       {
-        props.onSelectItem(item.value);
+        props.onSelectItem?.(item.value);
       }
 
       return <p key={item.value} onClick={h_click}>{item.text}</p>;
