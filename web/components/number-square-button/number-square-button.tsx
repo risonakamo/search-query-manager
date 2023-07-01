@@ -5,7 +5,7 @@ import "./number-square-button.less";
 export interface NumberSquareButtonProps
 {
   text:string
-  selected:boolean
+  selected?:boolean
 }
 
 export function NumberSquareButton(props:NumberSquareButtonProps):JSX.Element
