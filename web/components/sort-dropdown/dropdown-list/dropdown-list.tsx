@@ -11,7 +11,7 @@ export interface DropdownListProps
   items:DropdownOption[]
 
   onSelectItem?(value:string):void
-  onClickedOutside():void
+  // onClickedOutside():void
 
   className?:string
 }
@@ -27,24 +27,24 @@ export function DropdownList(props:DropdownListProps):JSX.Element
     showing:props.showing
   };
 
-  useEffect(()=>{
-    document.addEventListener("click",(e:MouseEvent):void=>{
-      console.log("huh",e.target);
+  // useEffect(()=>{
+  //   document.addEventListener("click",(e:MouseEvent):void=>{
+  //     console.log("huh",e.target);
 
-      if (!sync.current.showing)
-      {
-        console.log("not showing");
-        return;
-      }
+  //     if (!sync.current.showing)
+  //     {
+  //       console.log("not showing");
+  //       return;
+  //     }
 
-      // if showing, and clicked on something that is NOT inside of this element, or is this element,
-      // then trigger clicked outside
-      if (!(e.target && selfRef.current?.contains(e.target as HTMLElement)))
-      {
-        props.onClickedOutside();
-      }
-    });
-  },[]);
+  //     // if showing, and clicked on something that is NOT inside of this element, or is this element,
+  //     // then trigger clicked outside
+  //     if (!(e.target && selfRef.current?.contains(e.target as HTMLElement)))
+  //     {
+  //       props.onClickedOutside();
+  //     }
+  //   });
+  // },[]);
 
   const topcx:Mapping={
     hidden:!props.showing

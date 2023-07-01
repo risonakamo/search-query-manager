@@ -7,7 +7,9 @@ import "./sort-dropdown.less";
 
 export interface SortDropdownProps
 {
+  onSelectItem(value:string):void
 
+  items:DropdownOption[]
 }
 
 export function SortDropdown(props:SortDropdownProps):JSX.Element
@@ -20,25 +22,12 @@ export function SortDropdown(props:SortDropdownProps):JSX.Element
     setListShowing(!listShowing);
   }
 
-  function h_clickedOutside():void
+  /** selected an item from the list. close the list, and trigger on select item event */
+  function h_selectedItem(value:string):void
   {
     setListShowing(false);
+    props.onSelectItem(value);
   }
-
-  const items:DropdownOption[]=[
-    {
-      text:"item 1",
-      value:"1"
-    },
-    {
-      text:"item 2",
-      value:"2"
-    },
-    {
-      text:"really long value maybe?",
-      value:"3"
-    }
-  ];
 
   return <div className="sort-dropdown">
     <div className="selector-field" onClick={h_selectorFieldClick}>
@@ -50,6 +39,6 @@ export function SortDropdown(props:SortDropdownProps):JSX.Element
       </span>
     </div>
 
-    <DropdownList items={items} showing={listShowing} onClickedOutside={h_clickedOutside}/>
+    <DropdownList items={props.items} showing={listShowing} onSelectItem={h_selectedItem}/>
   </div>;
 }

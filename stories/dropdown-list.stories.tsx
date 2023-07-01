@@ -5,7 +5,7 @@ import {DropdownList,DropdownListProps} from "components/sort-dropdown/dropdown-
 type Story=StoryObj<DropdownListProps>;
 
 const meta:Meta<DropdownListProps>={
-  title:"dropdown list",
+  title:"sort dropdown/sub components/dropdown list",
   component:DropdownList,
   args:{
     items:[
