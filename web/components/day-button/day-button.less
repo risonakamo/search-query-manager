@@ -1,0 +1,48 @@
+@import (reference) "css/component-theme";
+
+.day-button
+{
+    .component-theme();
+
+    display: inline-flex;
+    flex-direction: row;
+    user-select: none;
+
+    .button-zone
+    {
+        background: #e44645;
+        display: inline-block;
+        border: 2px solid #b51815;
+        border-radius: 4px;
+        padding: 6px 15px;
+
+        h1
+        {
+            font-weight: 400;
+            color: white;
+            height: 35px;
+        }
+
+        h2
+        {
+            color: white;
+            font-weight: 400;
+            font-size: 15px;
+            opacity: 0.5;
+        }
+    }
+
+    .info-zone
+    {
+        display: flex;
+        flex-direction: column;
+
+        p
+        {
+            flex: 1;
+            display: flex;
+            padding: 0 5px;
+            align-items: center;
+        }
+    }
+}
